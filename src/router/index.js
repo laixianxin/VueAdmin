@@ -51,7 +51,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '欢迎', icon: 'dashboard' }
     }]
   },
 
@@ -60,19 +60,20 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    alwaysShow: true,
+    meta: { title: '客服', icon: 'el-icon-service' },
     children: [
       {
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: { title: '工单管理', icon: 'table' }
       },
       {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        meta: { title: '客服分类', icon: 'tree' }
       }
     ]
   },
@@ -80,12 +81,15 @@ export const constantRoutes = [
   {
     path: '/form',
     component: Layout,
+    redirect: '/form/index',
+    alwaysShow: true,
+    meta: { title: 'APP 配置', icon: 'el-icon-setting' },
     children: [
       {
         path: 'index',
         name: 'Form',
         component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        meta: { title: '配置管理', icon: 'form' }
       }
     ]
   },
@@ -94,41 +98,42 @@ export const constantRoutes = [
     path: '/nested',
     component: Layout,
     redirect: '/nested/menu1',
+    alwaysShow: true,
     name: 'Nested',
     meta: {
-      title: 'Nested',
-      icon: 'nested'
+      title: '财务',
+      icon: 'el-icon-money'
     },
     children: [
       {
         path: 'menu1',
         component: () => import('@/views/nested/menu1/index'), // Parent router-view
         name: 'Menu1',
-        meta: { title: 'Menu1' },
+        meta: { title: '财务概览' },
         children: [
           {
             path: 'menu1-1',
             component: () => import('@/views/nested/menu1/menu1-1'),
             name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
+            meta: { title: '账单管理' }
           },
           {
             path: 'menu1-2',
             component: () => import('@/views/nested/menu1/menu1-2'),
             name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
+            meta: { title: '结算管理' },
             children: [
               {
                 path: 'menu1-2-1',
                 component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
                 name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
+                meta: { title: '收支明细' }
               },
               {
                 path: 'menu1-2-2',
                 component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
                 name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
+                meta: { title: '结算记录' }
               }
             ]
           },
@@ -136,7 +141,7 @@ export const constantRoutes = [
             path: 'menu1-3',
             component: () => import('@/views/nested/menu1/menu1-3'),
             name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
+            meta: { title: '财务报表' }
           }
         ]
       },
@@ -144,14 +149,87 @@ export const constantRoutes = [
         path: 'menu2',
         component: () => import('@/views/nested/menu2/index'),
         name: 'Menu2',
-        meta: { title: 'menu2' }
+        meta: { title: '账户管理' }
       }
     ]
   },
 
   {
-    path: 'external-link',
+    path: '/affiliate',
     component: Layout,
+    redirect: '/affiliate/index',
+    alwaysShow: true,
+    name: 'Affiliate',
+    meta: { title: 'Affiliate 推广', icon: 'el-icon-s-promotion' },
+    children: [
+      {
+        path: 'index',
+        name: 'AffiliateCampaigns',
+        component: () => import('@/views/table/index'),
+        meta: { title: '推广管理', icon: 'table' }
+      },
+      {
+        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        meta: { title: '推广文档', icon: 'link' }
+      }
+    ]
+  },
+
+  {
+    path: '/system',
+    component: Layout,
+    redirect: '/system/index',
+    alwaysShow: true,
+    name: 'System',
+    meta: { title: '系统设置', icon: 'el-icon-setting' },
+    children: [
+      {
+        path: 'index',
+        name: 'SystemSettings',
+        component: () => import('@/views/form/index'),
+        meta: { title: '基础设置', icon: 'form' }
+      }
+    ]
+  },
+
+  {
+    path: '/statistics',
+    component: Layout,
+    redirect: '/statistics/index',
+    alwaysShow: true,
+    name: 'Statistics',
+    meta: { title: '运营统计', icon: 'el-icon-s-data' },
+    children: [
+      {
+        path: 'index',
+        name: 'OperationStatistics',
+        component: () => import('@/views/table/index'),
+        meta: { title: '数据报表', icon: 'table' }
+      }
+    ]
+  },
+
+  {
+    path: '/lines',
+    component: Layout,
+    redirect: '/lines/index',
+    alwaysShow: true,
+    name: 'Lines',
+    meta: { title: '线路管理', icon: 'el-icon-share' },
+    children: [
+      {
+        path: 'index',
+        name: 'LineManagement',
+        component: () => import('@/views/tree/index'),
+        meta: { title: '线路列表', icon: 'tree' }
+      }
+    ]
+  },
+
+  {
+    path: '/external-link',
+    component: Layout,
+    hidden: true,
     children: [
       {
         path: 'https://panjiachen.github.io/vue-element-admin-site/#/',

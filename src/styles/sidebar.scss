@@ -39,7 +39,7 @@
 
     &.has-logo {
       .el-scrollbar {
-        height: calc(100% - 50px);
+        height: calc(100% - #{$sideBarLogoHeight});
       }
     }
 
@@ -66,6 +66,19 @@
       border: none;
       height: 100%;
       width: 100% !important;
+      background-color: $menuBg !important;
+    }
+
+    .el-menu-item,
+    .el-submenu__title {
+      height: 54px;
+      line-height: 54px;
+      color: $menuText !important;
+    }
+
+    .el-menu-item.is-active {
+      color: $menuActiveText !important;
+      background-color: $accentBlue !important;
     }
 
     // menu hover

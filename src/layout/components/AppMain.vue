@@ -1,5 +1,9 @@
 <template>
   <section class="app-main">
+    <header class="page-heading">
+      <breadcrumb />
+      <h1>{{ pageTitle }}</h1>
+    </header>
     <transition name="fade-transform" mode="out-in">
       <router-view :key="key" />
     </transition>
@@ -7,26 +11,50 @@
 </template>
 
 <script>
+import Breadcrumb from '@/components/Breadcrumb'
+
 export default {
   name: 'AppMain',
+  components: { Breadcrumb },
   computed: {
     key() {
       return this.$route.path
+    },
+    pageTitle() {
+      return this.$route.meta.title || ''
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "~@/styles/variables.scss";
+
 .app-main {
-  /*50 = navbar  */
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 64px);
   width: 100%;
   position: relative;
   overflow: hidden;
+  background: $pageBg;
+  color: $textPrimary;
 }
+
+.page-heading {
+  padding: 12px 24px 16px;
+  background: $surfaceBg;
+  border-bottom: 1px solid $borderColor;
+
+  h1 {
+    margin: 4px 0 0;
+    color: $textPrimary;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+}
+
 .fixed-header+.app-main {
-  padding-top: 50px;
+  padding-top: 64px;
 }
 </style>
 

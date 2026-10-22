@@ -1,30 +1,54 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">name: {{ name }}</div>
+    <div class="welcome-card">
+      <i class="el-icon-success" />
+      <span>午安！</span>
+    </div>
+    <footer class="dashboard-footer">© {{ year }} Transocks</footer>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
   name: 'Dashboard',
-  computed: {
-    ...mapGetters([
-      'name'
-    ])
+  data() {
+    return {
+      year: new Date().getFullYear()
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.dashboard {
-  &-container {
-    margin: 30px;
+@import "~@/styles/variables.scss";
+
+.dashboard-container {
+  padding: 24px;
+}
+
+.welcome-card {
+  display: flex;
+  align-items: center;
+  min-height: 94px;
+  padding: 24px 32px;
+  border: 1px solid $borderColor;
+  border-radius: 4px;
+  background: $surfaceBg;
+  color: $textPrimary;
+  font-size: 18px;
+  font-weight: 600;
+
+  i {
+    margin-right: 12px;
+    color: $accentBlue;
+    font-size: 20px;
   }
-  &-text {
-    font-size: 30px;
-    line-height: 46px;
-  }
+}
+
+.dashboard-footer {
+  padding-top: 8px;
+  color: $textSecondary;
+  font-size: 16px;
+  text-align: center;
 }
 </style>

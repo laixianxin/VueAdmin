@@ -4,6 +4,12 @@
 @import './element-ui.scss';
 @import './sidebar.scss';
 
+html,
+body {
+  background: $pageBg;
+  color: $textPrimary;
+}
+
 body {
   height: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -23,6 +29,7 @@ html {
 
 #app {
   height: 100%;
+  background: $pageBg;
 }
 
 *,
@@ -62,4 +69,5 @@ div:focus {
 // main-container global css
 .app-container {
   padding: 20px;
+  color: $textPrimary;
 }
