@@ -10,7 +10,7 @@
       <div class="bullshit">
         <div class="bullshit__oops">OOPS!</div>
         <div class="bullshit__info">All rights reserved
-          <a style="color:#20a0ff" href="https://wallstreetcn.com" target="_blank">wallstreetcn</a>
+          <a href="https://wallstreetcn.com" target="_blank">wallstreetcn</a>
         </div>
         <div class="bullshit__headline">{{ message }}</div>
         <div class="bullshit__info">Please check that the URL you entered is correct, or click the button below to return to the homepage.</div>
@@ -33,6 +33,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/styles/variables.scss";
+
 .wscn-http404-container{
   transform: translate(-50%,-50%);
   position: absolute;
@@ -165,7 +167,7 @@ export default {
       font-size: 32px;
       font-weight: bold;
       line-height: 40px;
-      color: #1482f0;
+      color: $accentText;
       opacity: 0;
       margin-bottom: 20px;
       animation-name: slideUp;
@@ -175,7 +177,7 @@ export default {
     &__headline {
       font-size: 20px;
       line-height: 24px;
-      color: #222;
+      color: $textPrimary;
       font-weight: bold;
       opacity: 0;
       margin-bottom: 10px;
@@ -187,20 +189,24 @@ export default {
     &__info {
       font-size: 13px;
       line-height: 21px;
-      color: grey;
+      color: $textSecondary;
       opacity: 0;
       margin-bottom: 30px;
       animation-name: slideUp;
       animation-duration: 0.5s;
       animation-delay: 0.2s;
       animation-fill-mode: forwards;
+
+      a {
+        color: $accentText;
+      }
     }
     &__return-home {
       display: block;
       float: left;
       width: 110px;
       height: 36px;
-      background: #1482f0;
+      background: $accentBlue;
       border-radius: 100px;
       text-align: center;
       color: #ffffff;

@@ -2,10 +2,10 @@
   <div class="sidebar-logo-container" :class="{'collapse':collapse}">
     <transition name="sidebarLogoFade">
       <router-link v-if="collapse" key="collapse" class="sidebar-logo-link" to="/">
-        <span class="brand-mark">T</span>
+        <span class="brand-mark">S</span>
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
-        <span class="brand-mark">T</span>
+        <span class="brand-mark">S</span>
         <h1 class="sidebar-title">{{ title }}</h1>
       </router-link>
     </transition>
@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      title: 'Transocks'
+      title: 'ShadowLink'
     }
   }
 }

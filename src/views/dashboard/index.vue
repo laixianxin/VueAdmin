@@ -4,7 +4,7 @@
       <i class="el-icon-success" />
       <span>午安！</span>
     </div>
-    <footer class="dashboard-footer">© {{ year }} Transocks</footer>
+    <footer class="dashboard-footer">© {{ year }} ShadowLink</footer>
   </div>
 </template>
 
@@ -40,7 +40,7 @@ export default {
 
   i {
     margin-right: 12px;
-    color: $accentBlue;
+    color: $accentText;
     font-size: 20px;
   }
 }

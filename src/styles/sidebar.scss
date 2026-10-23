@@ -224,7 +224,7 @@
     overflow-y: auto;
 
     &::-webkit-scrollbar-track-piece {
-      background: #d3dce6;
+      background: $subMenuBg;
     }
 
     &::-webkit-scrollbar {
@@ -232,7 +232,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background: #99a9bf;
+      background: $menuText;
       border-radius: 20px;
     }
   }

@@ -81,15 +81,15 @@ export const constantRoutes = [
   {
     path: '/form',
     component: Layout,
-    redirect: '/form/index',
+    redirect: '/form/parameter',
     alwaysShow: true,
     meta: { title: 'APP 配置', icon: 'el-icon-setting' },
     children: [
       {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: '配置管理', icon: 'form' }
+        path: 'parameter',
+        name: 'ParameterConfiguration',
+        component: () => import('@/views/parameter/index'),
+        meta: { title: '参数配置', icon: 'el-icon-document' }
       }
     ]
   },

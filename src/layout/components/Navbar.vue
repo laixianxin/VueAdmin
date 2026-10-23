@@ -116,7 +116,7 @@ export default {
         cursor: pointer;
 
         .user-icon {
-          color: $accentBlue;
+          color: $accentText;
           font-size: 18px;
         }
 

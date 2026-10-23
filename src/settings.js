@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'Transocks',
+  title: 'ShadowLink',
 
   /**
    * @type {boolean} true | false

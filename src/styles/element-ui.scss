@@ -5,10 +5,34 @@
 .el-message-box,
 .el-dropdown-menu,
 .el-select-dropdown,
-.el-picker-panel {
+.el-picker-panel,
+.el-popover,
+.el-cascader__dropdown,
+.el-time-panel,
+.el-tooltip__popper.is-dark {
   color: $textPrimary;
   background-color: $surfaceBg;
   border-color: $borderColor;
+}
+
+.el-tooltip__popper.is-dark {
+  background-color: $surfaceRaised;
+}
+
+.el-tooltip__popper.is-dark[x-placement^="top"] .popper__arrow {
+  border-top-color: $surfaceRaised;
+}
+
+.el-tooltip__popper.is-dark[x-placement^="bottom"] .popper__arrow {
+  border-bottom-color: $surfaceRaised;
+}
+
+.el-tooltip__popper.is-dark[x-placement^="left"] .popper__arrow {
+  border-left-color: $surfaceRaised;
+}
+
+.el-tooltip__popper.is-dark[x-placement^="right"] .popper__arrow {
+  border-right-color: $surfaceRaised;
 }
 
 .el-card__header,
@@ -17,7 +41,10 @@
 .el-dropdown-menu__item:not(.is-disabled):hover,
 .el-select-dropdown__item.hover,
 .el-picker-panel__sidebar,
-.el-picker-panel__footer {
+.el-picker-panel__footer,
+.el-time-panel__footer,
+.el-cascader-node:not(.is-disabled):hover,
+.el-tree-node__content:hover {
   color: $textPrimary;
   background-color: $surfaceRaised;
   border-color: $borderColor;
@@ -45,6 +72,23 @@
   color: $textPrimary;
   background-color: $surfaceRaised;
   border-color: $borderColor;
+}
+
+.el-input__inner:hover,
+.el-textarea__inner:hover {
+  border-color: $textSecondary;
+}
+
+.el-input__inner:focus,
+.el-textarea__inner:focus {
+  border-color: $accentText;
+}
+
+.el-input__icon,
+.el-select .el-input .el-select__caret,
+.el-date-editor .el-range__icon,
+.el-date-editor .el-range__close-icon {
+  color: $textSecondary;
 }
 
 .el-input__inner::placeholder,
@@ -81,6 +125,26 @@
   background-color: $surfaceRaised;
 }
 
+.el-table--striped .el-table__body tr.el-table__row--striped td {
+  background-color: $surfaceRaised;
+}
+
+.el-table__body tr.current-row > td,
+.el-table__body tr.hover-row > td {
+  background-color: $surfaceRaised;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped.current-row > td,
+.el-table__body tr.hover-row.current-row > td,
+.el-table__body tr.hover-row.el-table__row--striped.current-row > td,
+.el-table__body tr.hover-row.el-table__row--striped > td {
+  background-color: $surfaceRaised;
+}
+
+.el-table .cell {
+  color: $textPrimary;
+}
+
 .el-select-dropdown__item,
 .el-dropdown-menu__item,
 .el-date-table th,
@@ -94,17 +158,284 @@
   color: $textPrimary;
 }
 
+.el-select-dropdown__item.selected {
+  color: $accentText;
+  background-color: $surfaceRaised;
+}
+
+.el-select-dropdown__item.is-disabled,
+.el-dropdown-menu__item.is-disabled {
+  color: $textSecondary;
+  opacity: .55;
+}
+
 .el-select-dropdown__item.hover,
 .el-select-dropdown__item:hover,
 .el-date-table td.available:hover,
 .el-date-table td.current:not(.disabled) span,
 .el-tabs__item.is-active,
 .el-tabs__item:hover {
-  color: $accentBlue;
+  color: $accentText;
 }
 
 .el-tabs__active-bar {
   background-color: $accentBlue;
+}
+
+.el-date-table td.today span {
+  color: $accentText;
+}
+
+.el-date-table td.current:not(.disabled) span {
+  color: #fff;
+  background-color: $accentBlue;
+}
+
+.el-date-table td.disabled,
+.el-date-table td.disabled div,
+.el-time-spinner__item.disabled,
+.el-cascader-node.is-disabled {
+  color: $textSecondary;
+  opacity: .55;
+}
+
+.el-date-table td.next-month,
+.el-date-table td.prev-month {
+  color: $textSecondary;
+  opacity: .65;
+}
+
+.el-date-table td.in-range div {
+  background-color: $surfaceRaised;
+}
+
+.el-date-table td.start-date span,
+.el-date-table td.end-date span {
+  color: #fff;
+  background-color: $accentBlue;
+}
+
+.el-date-editor .el-range-input {
+  color: $textPrimary;
+  background-color: transparent;
+}
+
+.el-date-editor .el-range-separator,
+.el-date-editor .el-range__icon,
+.el-date-editor .el-range__close-icon {
+  color: $textSecondary;
+}
+
+.el-picker-panel__shortcut,
+.el-date-picker__header-label:hover,
+.el-picker-panel__icon-btn:hover {
+  color: $accentText;
+}
+
+.el-time-panel__content::after,
+.el-time-panel__content::before {
+  border-color: $borderColor;
+}
+
+.el-time-spinner__item {
+  color: $textPrimary;
+}
+
+.el-time-spinner__item:hover:not(.disabled):not(.active) {
+  background-color: $surfaceRaised;
+}
+
+.el-time-spinner__item.active:not(.disabled) {
+  color: $accentText;
+}
+
+.el-cascader-node {
+  color: $textPrimary;
+}
+
+.el-cascader-node.in-active-path,
+.el-cascader-node.is-selectable.in-checked-path {
+  color: $accentText;
+}
+
+.el-tree {
+  color: $textPrimary;
+  background-color: transparent;
+}
+
+.el-tree-node:focus > .el-tree-node__content {
+  background-color: $surfaceRaised;
+}
+
+.el-checkbox__inner,
+.el-radio__inner {
+  background-color: $surfaceRaised;
+  border-color: $textSecondary;
+}
+
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner,
+.el-radio__input.is-checked .el-radio__inner {
+  background-color: $accentBlue;
+  border-color: $accentBlue;
+}
+
+.el-checkbox__input.is-disabled .el-checkbox__inner,
+.el-radio__input.is-disabled .el-radio__inner {
+  background-color: $surfaceBg;
+  border-color: $borderColor;
+}
+
+.el-checkbox__input.is-disabled + .el-checkbox__label,
+.el-radio__input.is-disabled + .el-radio__label {
+  color: $textSecondary;
+}
+
+.el-switch__core {
+  background-color: $borderColor;
+  border-color: $borderColor;
+}
+
+.el-switch.is-checked .el-switch__core {
+  background-color: $accentBlue;
+  border-color: $accentBlue;
+}
+
+.el-radio-button__inner {
+  color: $textPrimary;
+  background-color: $surfaceRaised;
+  border-color: $borderColor;
+  box-shadow: -1px 0 0 0 $borderColor;
+}
+
+.el-radio-button:first-child .el-radio-button__inner {
+  border-left-color: $borderColor;
+}
+
+.el-radio-button__orig-radio:checked + .el-radio-button__inner {
+  color: #fff;
+  background-color: $accentBlue;
+  border-color: $accentBlue;
+  box-shadow: -1px 0 0 0 $accentBlue;
+}
+
+.el-input-number__decrease,
+.el-input-number__increase {
+  color: $textSecondary;
+  background-color: $surfaceRaised;
+  border-color: $borderColor;
+}
+
+.el-input-number__decrease:hover,
+.el-input-number__increase:hover {
+  color: $accentText;
+}
+
+.el-button--primary {
+  color: #fff;
+  background-color: $accentBlue;
+  border-color: $accentBlue;
+}
+
+.el-button--primary:hover,
+.el-button--primary:focus {
+  background-color: lighten($accentBlue, 2%);
+  border-color: lighten($accentBlue, 2%);
+}
+
+.el-button--primary.is-disabled,
+.el-button--primary.is-disabled:hover,
+.el-button--primary.is-disabled:focus {
+  color: $textSecondary;
+  background-color: $surfaceRaised;
+  border-color: $borderColor;
+}
+
+.el-tag {
+  color: $textPrimary;
+  background-color: $surfaceRaised;
+  border-color: $borderColor;
+}
+
+.el-tag--success,
+.el-alert--success {
+  color: $successText;
+  background-color: rgba(38, 129, 94, .18);
+  border-color: rgba(99, 215, 166, .32);
+}
+
+.el-tag--warning,
+.el-alert--warning {
+  color: $warningText;
+  background-color: rgba(166, 116, 29, .18);
+  border-color: rgba(255, 210, 122, .32);
+}
+
+.el-tag--danger,
+.el-alert--error {
+  color: $dangerText;
+  background-color: rgba(171, 58, 77, .18);
+  border-color: rgba(255, 139, 155, .32);
+}
+
+.el-tag--info,
+.el-alert--info {
+  color: $infoText;
+  background-color: rgba(65, 112, 163, .18);
+  border-color: rgba(142, 197, 255, .32);
+}
+
+.el-alert__title,
+.el-alert__description,
+.el-alert__closebtn {
+  color: inherit;
+}
+
+.el-alert--success.is-light {
+  color: $successText;
+  background-color: rgba(38, 129, 94, .18);
+}
+
+.el-alert--warning.is-light {
+  color: $warningText;
+  background-color: rgba(166, 116, 29, .18);
+}
+
+.el-alert--error.is-light {
+  color: $dangerText;
+  background-color: rgba(171, 58, 77, .18);
+}
+
+.el-alert--info.is-light {
+  color: $infoText;
+  background-color: rgba(65, 112, 163, .18);
+}
+
+.el-upload-dragger {
+  color: $textPrimary;
+  background-color: $surfaceRaised;
+  border-color: $borderColor;
+}
+
+.el-upload-dragger:hover {
+  border-color: $accentText;
+}
+
+.el-message,
+.el-notification {
+  color: $textPrimary;
+  background-color: $surfaceBg;
+  border-color: $borderColor;
+}
+
+.el-message-box__title,
+.el-notification__title {
+  color: $textPrimary;
+}
+
+.el-message__content,
+.el-notification__content {
+  color: $textSecondary;
 }
 
 .el-loading-mask {
@@ -118,6 +449,15 @@
 .el-pagination .el-pager li {
   background-color: $surfaceBg;
   color: $textPrimary;
+}
+
+.el-pagination .el-pager li.active {
+  color: $accentText;
+}
+
+.el-pagination button:disabled,
+.el-pagination .el-pager li.disabled {
+  color: $textSecondary;
 }
 
 .el-breadcrumb__inner,
@@ -135,9 +475,9 @@
 
 .el-button--default:hover,
 .el-button--default:focus {
-  color: $accentBlue;
+  color: $accentText;
   background-color: $surfaceBg;
-  border-color: $accentBlue;
+  border-color: $accentText;
 }
 
 .el-breadcrumb__inner,
